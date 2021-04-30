@@ -1,0 +1,16 @@
+body {
+    background: #2c2e30;
+    background: -webkit-linear-gradient(to top, #2c2e30, #232526);
+    background: linear-gradient(to top, #2c2e30, #232526);
+}
+
+.card,
+.btn-dark {
+    border: none;
+    border-radius: 0px;
+}
+
+.btn-dark {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+}

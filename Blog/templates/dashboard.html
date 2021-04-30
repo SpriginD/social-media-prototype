@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard | {{ user.username }} {% endblock title %}
+
+{% load static %}
+{% block css%} 
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Dashboard Menu</h3>
+                    </div>
+                    <ul class="lisst-unstyled components">
+                        <p>Providers</p>
+                        <li class="active">
+                            <a class="dropdown-toggle" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                            <ul class="lisst-unstyled collapse" id="homeSubmenu">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">My Posts</a></li>
+                                <li><a href="">Activity History</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">About</a></li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                            <ul class="lisst-unstyled collapse" id="pageSubmenu">
+                                <li><a href="">Page I</a></li>
+                                <li><a href="">Page II</a></li>
+                                <li><a href="">Page III</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <div class="col">
+                <h3>Sidebar</h3>
+            </div>
+
+            <div class="col">
+                <h2>Content</h2>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %} {% endblock script %}

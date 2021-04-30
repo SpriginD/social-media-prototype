@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Posts {% endblock %}
+
+{% load static %}
+{% block css%} 
+    <link rel="stylesheet" type="text/css" href="{% static 'posts.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-2">
+        <a class="btn btn-dark btn-lg rounded rounded-3 my-4" href="{% url 'index' %}">Geri dön</a>
+        <div class="card-columns">
+            {% for post in all_posts %}
+                    <div class="card shadow rounded rounded-3 bg-dark text-white text-center">
+                        <div class="card-header mx-2 my-3" style="background: none;">
+                            <h3 class="card-title">{{post.title}}</h3>
+                        </div>
+                        <div class="card-body py-0">
+                            <h5 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h5>
+                            <p class="card-text m-3">{{post.content}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                {{ post.author.username }}  /  {{ post.date}}
+                            </small>
+                        </div>
+                        <!-- <blockquote class="blockquote mb-0">
+                            <p class="card-text">{{post.content}}</p>
+                            <footer class="blockquote-footer">
+                                <small class="text-muted">
+                                    {{ post.author.username }}  /  {{ post.date}}
+                                </small>
+                            </footer>
+                        </blockquote> -->
+                    </div>
+            {% endfor %}  
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+
+{% endblock %}

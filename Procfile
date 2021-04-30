@@ -1,0 +1,1 @@
+web: gunicorn Foxl.wsgi --log-file -
